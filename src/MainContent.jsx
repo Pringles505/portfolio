@@ -4,7 +4,6 @@ import './App.css';
 function MainContent() {
   return (
     <div className="main-content">
-        
       <div className="section">
         <h2>Who am I?</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
