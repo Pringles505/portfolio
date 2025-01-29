@@ -35,7 +35,15 @@ function ProfileSection() {
         <div className="profile-text">
           <h1>Hello, I'm Miguel Mascaró</h1>
           <p>I'm a software development student.</p>
-          <button id="scrollButton" onClick={scrollToContent}>Don't Believe Me?</button>
+          <button id="scrollButton" onClick={scrollToContent}>
+            Don't Believe Me?
+          </button>
+
+          {/* Scroll Down Indicator */}
+          <div className="scroll-down">
+            <p>Scroll Down</p>
+            <span className="arrow">↓</span>
+          </div>
         </div>
       </div>
     </>

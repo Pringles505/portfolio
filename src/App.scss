@@ -73,4 +73,28 @@
   border-width: 1px;
 }
 
+.scroll-down {
+  position: absolute;
+  bottom: 120px;  // Moves it lower
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 16px; // Larger text
+  color: #fff;
+  animation: bounce 1.5s infinite;
+}
 
+.scroll-down .arrow {
+  display: block;
+  font-size: 24px; // Larger arrow
+  margin-top: -3px; // Moves arrow closer to text
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 5px);
+  }
+}

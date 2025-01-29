@@ -5,12 +5,12 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
   
 }
 
@@ -24,13 +24,13 @@ a:hover {
 }
 
 body {
+  background-color: #242424;
   width: 100%;
   margin: 0;
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-
 }
 
 h1 {
@@ -45,7 +45,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: black;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -97,16 +97,17 @@ button:focus-visible {
   background-size: cover; /* Fully covers screen */
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1; /* Sends it behind everything */
+  z-index: 1; /* Sends it behind everything */
 }
 
 .profile-text {
   width: 20%;
-  color: #213547;
+  color: white;
   font-size: 1.2rem;
   line-height: 1.5;
   text-align: left;
 }
+
 
 @media (max-width: 1024px) {
   .profile-text {
