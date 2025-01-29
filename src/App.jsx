@@ -1,28 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import ProfileSection from './ProfileSection';
+import MainContent from './MainContent';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <img src="/profilePicture.jpg" alt="Profile" className="profile-picture" />
-      </div>
-      <h1>Miguel Mascaró </h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ProfileSection />
+      <MainContent />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

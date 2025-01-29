@@ -24,10 +24,10 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -67,11 +67,101 @@ button:focus-visible {
   }
 }
 
-.profile-picture {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border: 2px solid #000;
-  margin: 20px auto;
-  display: block;
+.profile-container {
+  position: relative; /* Ensures proper stacking */
+  z-index: 2; /* Same as main-content */
+  width: 100vw;
+}
+
+.profile-section {
+  position: relative;
+  z-index: 2; /* Ensures it's on top of the background */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.profile-image {
+  position: fixed; /* Always in the background */
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('/profilePictureShort.jpg');
+  background-size: cover; /* Fully covers screen */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Sends it behind everything */
+}
+
+.profile-text {
+  width: 20%;
+  color: #213547;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .profile-text {
+    width: 30%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-text {
+    width: 40%;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-text {
+    width: 80%;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+
+.main-content {
+  position: absolute;
+  z-index: 2;
+  top: 100vh;
+  left: 0;
+  width: 100vw; /* Full width */
+  min-height: 200vh;
+  background-color: #ffffff;
+  color: #213547;
+  padding: 20px;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .profile-picture {
+    margin: 40px 40px 40px 40px; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-picture {
+    margin: 40px 40px 40px 40px; 
+  }
 }
