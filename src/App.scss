@@ -1,7 +1,4 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -40,3 +37,40 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-text h1,
+.profile-text p,
+.profile-text button {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.profile-text h1 {
+  animation-delay: 0.2s;
+}
+
+.profile-text p {
+  animation-delay: 0.4s;
+}
+
+.profile-text button {
+  animation-delay: 0.6s;
+}
+
+.profile-text button:hover {
+  border-color: #565cce;
+  border-width: 1px;
+}
+
+

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 
 function ProfileSection() {
   const [offsetY, setOffsetY] = useState(0);
@@ -13,12 +13,10 @@ function ProfileSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- // Timeout, so the scrollIntoview is completed before calling scrollBy
   const scrollToContent = () => {
     const mainContent = document.getElementById("main-content");
     if (mainContent) {
-      mainContent.scrollIntoView({ behavior: "smooth" });
-
+      mainContent.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -35,9 +33,9 @@ function ProfileSection() {
       {/* Foreground Section (On Top of Background) */}
       <div className="profile-section">
         <div className="profile-text">
-          <button id="scrollButton" onClick={scrollToContent}>Scroll to Content</button>
           <h1>Hello, I'm Miguel Mascaró</h1>
           <p>I'm a software development student.</p>
+          <button id="scrollButton" onClick={scrollToContent}>Don't Believe Me?</button>
         </div>
       </div>
     </>
