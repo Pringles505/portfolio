@@ -1,119 +1,237 @@
-#root {
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
+  
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  background-color: #242424;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: black;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.profile-container {
+  position: relative; /* Ensures proper stacking */
+  z-index: 2; /* Same as main-content */
+  width: 100vw;
+}
+
+.profile-section {
+  position: relative;
+  z-index: 2; /* Ensures it's on top of the background */
+  width: 140vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.profile-image {
+  position: fixed; /* Always in the background */
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('/profilePictureShort.jpg');
+  background-size: cover; /* Fully covers screen */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1; /* Sends it behind everything */
+}
+
+.profile-text {
+  width: 20%;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.profile-text2 {
+  width: 20%;
+  color: white;
+  font-size: 2.5rem; /* Larger font size */
+  font-weight: 700; /* Bold weight */
+  line-height: 1.5;
+  text-align: left;
+  text-shadow: 2px px 10px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+  position: absolute; /* Position absolutely within the container */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to exact center */
+}
+
+
+
+@media (max-width: 1024px) {
+  .profile-text {
+    max-width: 50%; /* More flexible than fixed percentages */
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-text {
+    max-width: 60%;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-text {
+    max-width: 90%;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 150vh;
+  background-color: #ffffff;
+  color: #213547;
+  padding: 2vw;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.text-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.divider {
+  width: 60%;
+  max-width: 700px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(100, 108, 255, 0.6), rgba(83, 91, 242, 0.6));
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+.cta-section {
   text-align: center;
+  margin-top: 60px;
+  padding: 20px;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
 
 .section {
   margin-bottom: 50px;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #282424;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.section p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #282424;
-}
-
-
-.profile-text h1,
-.profile-text p,
-.profile-text button {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.profile-text h1 {
-  animation-delay: 0.2s;
-}
-
-.profile-text p {
-  animation-delay: 0.4s;
-}
-
-.profile-text button {
-  animation-delay: 0.6s;
-}
-
-.profile-text button:hover {
-  border-color: #565cce;
-  border-width: 1px;
-}
-
-.scroll-down {
-  position: absolute;
-  bottom: 120px;  // Moves it lower
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-size: 16px; // Larger text
-  color: #fff;
-  animation: bounce 1.5s infinite;
-}
-
-.scroll-down .arrow {
-  display: block;
-  font-size: 24px; // Larger arrow
-  margin-top: -3px; // Moves arrow closer to text
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translate(-50%, 0);
+@media (max-width: 1024px) {
+  .profile-text {
+    max-width: 50%; /* More flexible than fixed percentages */
+    font-size: 1rem;
   }
-  50% {
-    transform: translate(-50%, 5px);
+  .profile-image {
+    width: 60%; /* Adjust image width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-text {
+    max-width: 60%;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .profile-image {
+    width: 70%; /* Adjust image width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-text {
+    max-width: 90%;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px;
+  }
+  .profile-image {
+    width: 100%; /* Adjust image width for smaller screens */
   }
 }
