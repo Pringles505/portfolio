@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
+import "./ProfileSection.scss";
 
 function ProfileSection() {
   const [offsetY, setOffsetY] = useState(0);

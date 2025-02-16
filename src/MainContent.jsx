@@ -10,27 +10,30 @@ function MainContent() {
         className="section"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         <h2>Who am I?</h2>
         <div className="text-wrapper">
           <p>
             Born in England’s big city, London, and raised in the quiet coastal
-            area of Málaga, Spain. My name is Miguel Mascaró, and I'm a software
-            development student. I'm currently studying at Immune Institute of
-            Technology in Madrid, Spain.
+            area of Málaga, Spain. My name is Miguel Mascaró, I'm a passionate
+            software engineer, pursuing a degree at Immune Institute of Technology. 
+          </p>
+          <p> 
+            When I'm not tinkering away in m  y latest Full-Stack project, I enjoy cooking,
+            playing guitar and finding holes in memory leaks in whatever deployer I'm using. 
           </p>
         </div>
       </motion.div>
 
-      <div className="divider"></div>
+      <div className="divider"></div> 
 
       <motion.div
         className="section"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true }}
       >
         <h2>What have I done?</h2>
@@ -45,7 +48,7 @@ function MainContent() {
         className="section"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
         viewport={{ once: true }}
       >
         <h2>Check me out on</h2>
@@ -60,7 +63,7 @@ function MainContent() {
         className="cta-section"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
         viewport={{ once: true }}
       >
         <h2>Let's Connect</h2>
