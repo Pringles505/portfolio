@@ -77,16 +77,14 @@ button:focus-visible {
 
 .profile-container {
   position: relative;
-  /* Ensures proper stacking */
   z-index: 2;
-  /* Same as main-content */
+
   width: 100vw;
 }
 
 .profile-section {
   position: relative;
   z-index: 2;
-  /* Ensures it's on top of the background */
   width: 140vw;
   height: 100vh;
   display: flex;
@@ -165,7 +163,7 @@ button:focus-visible {
 
   .profile-section {
     width: 100vw;
-    height: auto;
+    height: 37vh;
     flex-direction: column;
     padding: 0;
     justify-content: flex-start;
