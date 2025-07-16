@@ -4,34 +4,41 @@ import "./ProfileSection.scss";
 
 function ProfileSection() {
   const [offsetY, setOffsetY] = useState(0);
+  const [showMainContent, setShowMainContent] = useState(false);
 
   const handleScroll = () => {
     setOffsetY(window.scrollY);
-  };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // If user scrolls past 150px, reveal content
+    if (window.scrollY > 100 && !showMainContent) {
+      setShowMainContent(true);
+    }
+  };
 
   const scrollToContent = () => {
     const mainContent = document.getElementById("main-content");
     if (mainContent) {
       mainContent.scrollIntoView({ behavior: "smooth", block: "start" });
+      setShowMainContent(true);
     }
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showMainContent]);
+
   return (
     <>
-      {/* Background Image (Behind Everything) */}
+      {/* Background Image */}
       <div
         className="profile-image"
         style={{
-          backgroundPositionY: `${offsetY * -0.5}px`, // Parallax Effect
+          backgroundPositionY: `${offsetY * -0.5}px`,
         }}
       ></div>
 
-      {/* Foreground Section (On Top of Background) */}
+      {/* Foreground Section */}
       <div className="profile-section">
         <div className="profile-text">
           <h1>Hello, I'm Miguel Mascaró</h1>
@@ -39,12 +46,17 @@ function ProfileSection() {
           <button id="scrollButton" onClick={scrollToContent}>
             Don't Believe Me?
           </button>
+        </div>
+      </div>
 
-          {/* Scroll Down Indicator */}
-          <div className="scroll-down">
-            <p>Scroll Down</p>
-            <span className="arrow">↓</span>
-          </div>
+      {/* Content Below (Initially Hidden) */}
+      <div
+        id="main-content"
+        className={`main-content ${showMainContent ? "visible" : ""}`}
+      >
+        <div className="text-wrapper">
+          <h2>This is where it gets real.</h2>
+          <p>You scrolled. Or maybe you clicked. Either way... welcome.</p>
         </div>
       </div>
     </>
