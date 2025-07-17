@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "./ProfileSection.scss";
-import ProjectPortfolio from "./ProjectPortfolio"; 
+import ProjectPortfolio from "./ProjectPortfolio";
 
-function ProfileSection() { 
+function ProfileSection() {
   const [offsetY, setOffsetY] = useState(0);
   const [showMainContent, setShowMainContent] = useState(false);
 
@@ -17,7 +17,9 @@ function ProfileSection() {
   const scrollToContent = () => {
     const mainContent = document.getElementById("main-content");
     if (mainContent) {
-      mainContent.scrollIntoView({ behavior: "smooth", block: "start" });
+      const y = 700;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
       setShowMainContent(true);
     }
   };
