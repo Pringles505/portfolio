@@ -48,7 +48,7 @@
     position: relative;
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-25px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
@@ -81,6 +81,15 @@
       margin-right: 70px;
       position: relative;
       z-index: 1;
+
+      .card-header {
+        font-size: 0.85rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
 
       h3 {
         font-size: 1.8rem;
@@ -131,51 +140,51 @@
   }
 }
 
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .portfolio-section {
-      padding: 60px 15px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 60px 15px;
 
-      .portfolio-card {
-        .project-image-container {
-          width: 50px;
-          height: 50px;
-        }
+    .portfolio-card {
+      .project-image-container {
+        width: 50px;
+        height: 50px;
+      }
 
-        .card-content {
-          margin-right: 60px;
+      .card-content {
+        margin-right: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 40px 10px;
+
+    .portfolio-header {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    .portfolio-card {
+      padding: 15px;
+
+      .project-image-container {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        right: 15px;
+      }
+
+      .card-content {
+        margin-right: 50px;
+
+        h3 {
+          font-size: 1.2rem;
         }
       }
     }
   }
-
-  @media (max-width: 480px) {
-    .portfolio-section {
-      padding: 40px 10px;
-
-      .portfolio-header {
-        h2 {
-          font-size: 2rem;
-        }
-      }
-
-      .portfolio-card {
-        padding: 15px;
-
-        .project-image-container {
-          width: 40px;
-          height: 40px;
-          top: 15px;
-          right: 15px;
-        }
-
-        .card-content {
-          margin-right: 50px;
-
-          h3 {
-            font-size: 1.2rem;
-          }
-        }
-      }
-    }
-  }
+}

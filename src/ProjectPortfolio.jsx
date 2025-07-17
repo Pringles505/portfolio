@@ -6,16 +6,25 @@ const PROJECTS_DATA = [
   {
     id: "echo-chat",
     title: "Echo Chat",
+    header: "End-to-end Encrypted Chat App",
     apiUrl: "https://api.github.com/repos/Pringles505/Echo-Chat",
-    image: "/echo-logo.png", 
+    image: "/echo-logo.png",
     fallbackDescription: "A real-time chat application"
   },
   {
     id: "image-keyword-generator",
     title: "Image Keyword Generator",
+    header: "Multi-language Large Scale Image Keyworder",
     apiUrl: "https://api.github.com/repos/Pringles505/ImageKeywordGenerator",
     fallbackDescription: "Generates keywords from images"
-  }
+  },
+  {
+    id: "weather-app",
+    title: "Weather App",
+    header: "Weather Forecast Mobile App",
+    apiUrl: "https://api.github.com/repos/Pringles505/WeatherApp",
+    fallbackDescription: "App that provides weather forecasts",
+  },
 ];
 
 function ProjectPortfolio({ visible }) {
@@ -45,11 +54,13 @@ function ProjectPortfolio({ visible }) {
               return {
                 id: project.id,
                 title: project.title,
+                header: project.header, 
                 description: data.description || project.fallbackDescription,
                 tech: data.topics || [],
                 url: data.html_url || "#",
                 image: project.image || null
               };
+
             } catch (err) {
               console.error(`Failed to fetch ${project.title}:`, err);
               return {
@@ -91,7 +102,7 @@ function ProjectPortfolio({ visible }) {
     <section className={`portfolio-section ${visible ? "visible" : ""}`}>
       <div className="portfolio-header">
         <h2>Featured Projects</h2>
-        <p>A selection of my GitHub projects</p>
+        <p>A selection of my projects</p>
         {error && <p className="error-message">{error}</p>}
       </div>
 
@@ -114,6 +125,7 @@ function ProjectPortfolio({ visible }) {
 
 
             <div className="project-content">
+              <div className="card-header">{project.header}</div>
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
 
@@ -134,6 +146,7 @@ function ProjectPortfolio({ visible }) {
                 View on GitHub →
               </a>
             </div>
+
           </div>
         ))}
       </div>
