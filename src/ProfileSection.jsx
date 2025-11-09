@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "./ProfileSection.scss";
+import AboutSection from "./AboutSection";
 import ProjectPortfolio from "./ProjectPortfolio";
+import LinksSection from "./LinksSection";
 
 function ProfileSection() {
   const [offsetY, setOffsetY] = useState(0);
@@ -17,8 +19,7 @@ function ProfileSection() {
   const scrollToContent = () => {
     const mainContent = document.getElementById("main-content");
     if (mainContent) {
-      const y = 700;
-
+      const y = mainContent.offsetTop;
       window.scrollTo({ top: y, behavior: "smooth" });
       setShowMainContent(true);
     }
@@ -31,21 +32,28 @@ function ProfileSection() {
 
   return (
     <>
-      <div
-        className="profile-image"
-        style={{ backgroundPositionY: `${offsetY * -0.5}px` }}
-      ></div>
+      <div className="hero-wrapper">
+        <div
+          className="profile-image"
+          style={{ backgroundPositionY: `${offsetY * -0.5}px` }}
+        ></div>
 
-      <div className="profile-section">
-        <div className="profile-text">
-          <h1>Hello, I'm Miguel Mascaró</h1>
-          <p>I'm a software development student.</p>
-          <button id="scrollButton" onClick={scrollToContent}>
-            Don't Believe Me?
-          </button>
+        <div className="profile-section">
+          <div className="profile-text">
+            <h1>Hello, I'm Miguel Mascaró</h1>
+            <p>I'm a software development student.</p>
+            <button id="scrollButton" onClick={scrollToContent}>
+              Don't Believe Me?
+            </button>
+          </div>
         </div>
       </div>
-      <ProjectPortfolio visible={showMainContent} />
+      
+      <div id="main-content">
+        <AboutSection />
+        <ProjectPortfolio visible={showMainContent} />
+        <LinksSection />
+      </div>
     </>
   );
 }

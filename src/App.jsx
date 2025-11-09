@@ -6,9 +6,6 @@ function App() {
   return (
     <>
       <ProfileSection />
-      <div id="main-content">
-        <MainContent />
-      </div>
     </>
   );
 }
